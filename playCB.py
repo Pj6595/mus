@@ -51,8 +51,7 @@ def callback(outdata, frames, time, status):
 
 
 # stream de salida con callBack
-stream = sd.OutputStream(samplerate=SRATE, channels=data.shape[1],
-    callback=callback, blocksize=CHUNK)
+stream = sd.OutputStream(samplerate=SRATE, channels=data.shape[1], callback=callback, blocksize=CHUNK)
 
 # arrancamos stream
 stream.start()
@@ -62,7 +61,3 @@ c = ' '
 while c!='q':
     if kb.kbhit():
         c = kb.getch()
-
-
-
-
