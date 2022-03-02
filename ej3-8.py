@@ -9,6 +9,7 @@ from basicGenerators import *
 
 #Ejercicio 8: piano
 
+#Velocidades de cada nota
 noteSpeeds = {
     'C': 1,
     'D': 1.12,
@@ -38,6 +39,7 @@ print("Len: ",data.shape[0])
 kb = kbhit.KBHit()
 c= ' '
 
+#Suena la tecla según el input dado
 while c != 'a':
     c = kb.getch()
     SRATE = ORIGINALSRATE

@@ -9,11 +9,14 @@ SRATE = 44100
 DELAYSECONDS = 0.2
 VOLUME = 1.0
 
+# Clase delay del ejercicio anterior
+# Recibe un array de datos y un número con los segundos de delay
 class Delay:
     def __init__(self, data, seconds):
         self.data = data
         self.seconds = seconds
     
+    #Devuelve el array con seconds segundos de silencio al principio
     def applyDelay(self):
         nSamples = int(SRATE*float(self.seconds))
         delayedData = np.append(np.float32(np.zeros(nSamples)),self.data)
@@ -29,6 +32,7 @@ inStream.start()
 # (0,1): con un canal (1), vacio (de tamaño 0)
 buffer = np.empty((0, 1), dtype="float32")
 
+# aplicamos retraso al buffer en el que se recogerá la grabación
 delay = Delay(buffer, DELAYSECONDS)
 buffer = delay.applyDelay()
 
@@ -41,7 +45,7 @@ numBloque = 0
 nSamples = CHUNK 
 print('\n\nProcessing chunks: ',end='')
 
-# bucle de grabación
+# bucle de grabación y reprodución
 kb = kbhit.KBHit()
 c = ' '
 while c != 'q': 
@@ -49,12 +53,12 @@ while c != 'q':
     # read devuelve un par (samples,bool)
     buffer = np.append(buffer,bloque[0]) # en bloque[0] están los samples
 
-    # nuevo bloque
+    # reproducimos el chunk del buffer en el que se está grabando
     bloque = buffer[numBloque*CHUNK : numBloque*CHUNK+nSamples ]
     bloque *= VOLUME
 
     # lo pasamos al stream
-    outStream.write(bloque) # escribimos al stream
+    outStream.write(bloque)
 
     # modificación de volumen 
     if kb.kbhit():
@@ -66,6 +70,7 @@ while c != 'q':
     numBloque += 1
     print('.',end='')
 
+# Cierre de los streams
 inStream.stop()
 outStream.stop()
 

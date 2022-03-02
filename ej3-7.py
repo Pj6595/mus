@@ -1,14 +1,12 @@
 import kbhit
 import sounddevice as sd
-import soundfile as sf
-from scipy.io import wavfile
 import numpy as np
-import matplotlib
 from format_tools import *
 from basicGenerators import *
 
 #Ejercicio 7: cumpleaños feliz
 
+#Frecuencias de cada nota
 notes = {
     'C': 523.251,
     'D': 587.33,
@@ -19,12 +17,14 @@ notes = {
     'B': 987.767,
 }
 
+#Recibe un caracter con la nota que sea y devuelve su frecuencia
 def noteToFreq(note):
     if(note.isupper()): 
         return notes[note]
     else:
         return notes[note.upper()]*2
 
+#Recibe un array de pares (caracter/tiempo) y devuelve un buffer con los datos de la melodía
 def generateMusicData(partitura, volume):
     data = np.empty([1,0])
     for nota, duracion in partitura:
@@ -32,7 +32,6 @@ def generateMusicData(partitura, volume):
     return data
     
 CHUNK = 1024
-
 SRATE = 44100
 VOLUME = 1.0
 
@@ -45,14 +44,10 @@ partitura = [('G', 0.5), ('G', 0.5), ('A', 1), ('G', 1),
             ('f', 0.5), ('f', 0.5), ('e', 1), ('c', 1),
             ('d', 1), ('c', 2)]
 
-# abrimos wav y recogemos frecMuestreo y array de datos
-# SRATE, data = wavfile.read('piano.wav')
-
-#data = osci(frequency, SECONDS, VOLUME)
 data = generateMusicData(partitura, VOLUME)
 data = toFloat32(data)
 
-# informacion de wav
+# informacion de los datos
 print("Sample rate ",SRATE)
 print("Sample format: ",data.dtype)
 print("Num channels: ",len(data.shape))

@@ -7,11 +7,13 @@ import matplotlib
 from format_tools import *
 from basicGenerators import *
 
+#Recibe un array de datos y un número con los segundos de delay
 class Delay:
     def __init__(self, data, seconds):
         self.data = data
         self.seconds = seconds
     
+    #Devuelve el array con seconds segundos de silencio al principio
     def applyDelay(self):
         nSamples = int(SRATE*float(self.seconds))
         delayedData = np.append(np.float32(np.zeros(nSamples)),self.data)
@@ -19,7 +21,6 @@ class Delay:
 
 
 CHUNK = 1024
-
 SRATE = 44100
 SECONDS = 3
 DELAYSECONDS = 1
@@ -29,6 +30,7 @@ frequency = 50
 data = osci(frequency, SECONDS, VOLUME)
 data = toFloat32(data)
 
+#Aplicamos el retraso a los datos
 delay = Delay(data, DELAYSECONDS)
 data = delay.applyDelay()
 
