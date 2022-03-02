@@ -8,29 +8,29 @@ from format_tools import *
 from basicGenerators import *
 
 class Delay:
-    buffer = np.array([], dtype="float32")
-
-    def __init__(self, time):
-        self.buffer = np.zeros(int(SRATE*time))
+    def __init__(self, data, seconds):
+        self.data = data
+        self.seconds = seconds
     
-    def getNextChunk(self, signal):
-        self.buffer = np.append(self.buffer, signal)
-        chunk = self.buffer[:CHUNK]
-        self.buffer = np.delete(self.buffer, np.s_[:CHUNK])
-        return toFloat32(chunk)
+    def applyDelay(self):
+        nSamples = int(SRATE*float(self.seconds))
+        delayedData = np.append(np.float32(np.zeros(nSamples)),self.data)
+        return delayedData
 
-#Ejercicio 1: oscilador con frecuencia variable
+
 CHUNK = 1024
 
 SRATE = 44100
 SECONDS = 3
+DELAYSECONDS = 1
 VOLUME = 1.0
 frequency = 50
 
-delay = Delay(SECONDS)
-
 data = osci(frequency, SECONDS, VOLUME)
 data = toFloat32(data)
+
+delay = Delay(data, DELAYSECONDS)
+data = delay.applyDelay()
 
 # informacion de wav
 print("Sample rate ",SRATE)
