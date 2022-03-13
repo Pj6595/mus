@@ -21,18 +21,18 @@ class Delay:
 
 
 CHUNK = 1024
-SRATE = 44100
 SECONDS = 3
-DELAYSECONDS = 1
+DELAYSECONDS = 0.03
 VOLUME = 1.0
 frequency = 50
 
-data = osci(frequency, SECONDS, VOLUME)
+# abrimos wav y recogemos frecMuestreo y array de datos
+ORIGINALSRATE, data = wavfile.read('piano.wav')
 data = toFloat32(data)
 
 #Aplicamos el retraso a los datos
 delay = Delay(data, DELAYSECONDS)
-data = delay.applyDelay()
+delayedData = delay.applyDelay()
 
 # informacion de wav
 print("Sample rate ",SRATE)
@@ -40,13 +40,15 @@ print("Sample format: ",data.dtype)
 print("Num channels: ",len(data.shape))
 print("Len: ",data.shape[0])
 
+#reproducimos audio original
 sd.play(data, SRATE)
 
-# abrimos stream de salida
+
+# abrimos stream de salida para audio retardado
 stream = sd.OutputStream(
     samplerate = SRATE,            # frec muestreo 
     blocksize  = CHUNK,            # tamaño del bloque (muy recomendable unificarlo en todo el programa)
-    channels   = len(data.shape))  # num de canales
+    channels   = len(delayedData.shape))  # num de canales
 
 # arrancamos stream
 stream.start()
@@ -61,10 +63,10 @@ print('\n\nProcessing chunks: ',end='')
 # termina con 'q' o cuando el último bloque ha quedado incompleto (menos de CHUNK samples)
 while c!= 'q' and nSamples==CHUNK: 
     # numero de samples a procesar: CHUNK si quedan sufucientes y si no, los que queden
-    nSamples = min(CHUNK,data.shape[0] - (numBloque+1)*CHUNK)
+    nSamples = min(CHUNK,delayedData.shape[0] - (numBloque+1)*CHUNK)
 
     # nuevo bloque
-    bloque = data[numBloque*CHUNK : numBloque*CHUNK+nSamples]
+    bloque = delayedData[numBloque*CHUNK : numBloque*CHUNK+nSamples]
     bloque *= VOLUME
 
     # lo pasamos al stream

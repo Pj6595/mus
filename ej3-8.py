@@ -13,11 +13,11 @@ from basicGenerators import *
 noteSpeeds = {
     'C': 1,
     'D': 1.12,
-    'E': 1.19,
+    'E': 1.26,
     'F': 1.33,
     'G': 1.5,
-    'A': 1.59,
-    'B': 1.78,
+    'A': 1.68,
+    'B': 1.89,
 }
 
 CHUNK = 1024
