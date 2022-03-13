@@ -34,11 +34,12 @@ frame = 0
 
 MAXFREQ = 10000
 MINFREQ = 100
-MINAMPL = 0
-MAXAMPL = 1
+MINVOLUME = 0
+MAXVOLUME = 1
 
+# Cuanto cambia la frecuencia y el volumen por cada ud de distancia en el eje x/y
 Incr_X = (MAXFREQ - MINFREQ) / WIDTH 
-Incr_Y = (MAXAMPL - MINAMPL) / HEIGHT 
+Incr_Y = (MAXVOLUME - MINVOLUME) / HEIGHT 
 
 stream = sd.OutputStream(samplerate=SRATE,blocksize=CHUNK,channels=1)  
 stream.start()
@@ -46,20 +47,23 @@ stream.start()
 # obtencion de la posicion del raton
 playing = True
 while playing:
+    # Obtenemos el sonido con fm, beta y fc
     samples = oscFM(fc,fm,beta,vol,frame)
-    stream.write(np.float32(0.5*samples)) 
+    stream.write(np.float32(0.5*samples) * vol) 
     frame += CHUNK
 
+    # Calculamos fm y el volumen con las coordenadas del mouse
     for event in pygame.event.get():
         if event.type == pygame.MOUSEMOTION:
             mouseX, mouseY = event.pos
             print("Mouse X: ", mouseX, " Mouse Y: ", mouseY)
-            beta = mouseY * Incr_Y + MINAMPL
+            vol = mouseY * Incr_Y + MINVOLUME
             fm = mouseX * Incr_X + MINFREQ
             print("Frec moduladora: ", fm)
-            print("Factor (beta): ",beta)
+            print("Volumen: ",vol)
         if event.type == pygame.QUIT:
             playing = False
 
+# Cierre del bucle del programa
 pygame.quit()      
 stream.stop()
