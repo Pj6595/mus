@@ -208,7 +208,23 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Never ignore DLLs in the FMOD subfolder.
+!EscenaUnity/EscenaUnity/[Aa]ssets/Plugins/FMOD/**/lib/*
 
+# Don't ignore images and gizmos used by FMOD in the Unity Editor.
+!EscenaUnity/EscenaUnity/[Aa]ssets/Gizmos/FMOD/*
+!EscenaUnity/EscenaUnity/[Aa]ssets/Editor Default Resources/FMOD/*
+                    
+# Ignore the Cache folder since it is updated locally.
+/EscenaUnity/EscenaUnity/[Aa]ssets/Plugins/FMOD/Cache/*
+                    
+# Ignore bank files in the StreamingAssets folder.
+/EscenaUnity/EscenaUnity/[Aa]ssets/StreamingAssets/**/*.bank
+/EscenaUnity/EscenaUnity/[Aa]ssets/StreamingAssets/**/*.bank.meta
+                    
+# If the source bank files are kept outside of the StreamingAssets folder then these can be ignored.
+# Log files can be ignored.
+fmod_editor.log
 
 # PyCharm
 #  JetBrains specific template is maintainted in a separate JetBrains.gitignore that can
