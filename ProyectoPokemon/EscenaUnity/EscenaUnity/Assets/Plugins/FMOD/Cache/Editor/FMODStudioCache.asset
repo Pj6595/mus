@@ -75,7 +75,7 @@ MonoBehaviour:
   - {fileID: 2994603513863288217}
   StringsBanks:
   - {fileID: 8417027168474350821}
-  cacheTime: 637872890448752609
+  cacheTime: 637872912050660002
   cacheVersion: 10
 --- !u!114 &2994603513863288217
 MonoBehaviour:
@@ -92,10 +92,10 @@ MonoBehaviour:
   Path: ../../ProyectoFMOD/PokeMus/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637872890448682585
+  lastModified: 637872912050629980
   FileSizes:
   - Name: Desktop
-    Value: 3317888
+    Value: 3318912
   Exists: 1
 --- !u!114 &6658545346611676152
 MonoBehaviour:
@@ -140,7 +140,7 @@ MonoBehaviour:
   Path: ../../ProyectoFMOD/PokeMus/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637872890448752609
+  lastModified: 637872912050660002
   FileSizes:
   - Name: Desktop
     Value: 898
