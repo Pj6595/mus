@@ -75,7 +75,7 @@ MonoBehaviour:
   - {fileID: 2994603513863288217}
   StringsBanks:
   - {fileID: 8417027168474350821}
-  cacheTime: 637872912050660002
+  cacheTime: 637872975822237023
   cacheVersion: 10
 --- !u!114 &2994603513863288217
 MonoBehaviour:
@@ -92,10 +92,10 @@ MonoBehaviour:
   Path: ../../ProyectoFMOD/PokeMus/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637872912050629980
+  lastModified: 637872975822176983
   FileSizes:
   - Name: Desktop
-    Value: 3318912
+    Value: 146944
   Exists: 1
 --- !u!114 &6658545346611676152
 MonoBehaviour:
@@ -117,14 +117,14 @@ MonoBehaviour:
     Data4: -1528882222
   Banks:
   - {fileID: 2994603513863288217}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
   - {fileID: -6055072889547663262}
   MinDistance: 0
   MaxDistance: 0
-  Length: 86465
+  Length: 85253
 --- !u!114 &8417027168474350821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
   Path: ../../ProyectoFMOD/PokeMus/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637872912050660002
+  lastModified: 637872975822237023
   FileSizes:
   - Name: Desktop
     Value: 898
