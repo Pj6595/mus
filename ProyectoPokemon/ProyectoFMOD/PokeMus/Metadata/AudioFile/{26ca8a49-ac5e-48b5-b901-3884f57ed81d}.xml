@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{26ca8a49-ac5e-48b5-b901-3884f57ed81d}">
+		<property name="assetPath">
+			<value>Cries/429 - Mismagius.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>32.7280006</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.5018332925934978</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7c44d9f4-c673-4c92-a5a7-4eecf42ae637}</destination>
+		</relationship>
+	</object>
+</objects>

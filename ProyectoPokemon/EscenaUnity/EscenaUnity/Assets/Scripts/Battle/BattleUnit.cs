@@ -15,7 +15,7 @@ public class BattleUnit : MonoBehaviour
 	[SerializeField] bool isPlayerUnit;
 	[SerializeField] BattleHud hud;
 
-	private AudioSource cryPlayer;
+	private FMODUnity.StudioEventEmitter eventEmitter;
 
 	public BattleHud Hud
 	{
@@ -53,7 +53,7 @@ public class BattleUnit : MonoBehaviour
 
 		image.color = originalColor;
 
-		cryPlayer = gameObject.GetComponent<AudioSource>();
+		eventEmitter = gameObject.GetComponent<FMODUnity.StudioEventEmitter>();
 		PlayerEnterAnimation();
 	}
 
@@ -62,10 +62,43 @@ public class BattleUnit : MonoBehaviour
 		hud.gameObject.SetActive(false);
     }
 
+	private int PokemonNameToParamID()
+    {
+        switch (Pokemon.Base.Name)
+        {
+			case ("Rapidash"):
+				return 0;
+			case ("Suicune"):
+				return 1;
+			case ("Tyranitar"):
+				return 2;
+			case ("Swampert"):
+				return 3;
+			case ("Ludicolo"):
+				return 4;
+			case ("Flygon"):
+				return 5;
+			case ("Glalie"):
+				return 6;
+			case ("Metagross"):
+				return 7;
+			case ("Rayquaza"):
+				return 8;
+			case ("Mismagius"):
+				return 9;
+			case ("Lucario"):
+				return 10;
+			case ("Glaceon"):
+				return 11;
+			default:
+				return 0;
+		}
+    }
+
 	public void PlayerEnterAnimation()
 	{
-		cryPlayer.clip = Pokemon.Base.Cry;
-		cryPlayer.Play();
+		eventEmitter.Play();
+		eventEmitter.EventInstance.setParameterByName("PokemonName", PokemonNameToParamID());
 
 		if (isPlayerUnit)
 			image.transform.localPosition = new Vector3(-500f, originalPos.y);
@@ -95,8 +128,8 @@ public class BattleUnit : MonoBehaviour
 
 	public void PlayFaintAnimation()
 	{
-		cryPlayer.clip = Pokemon.Base.Cry;
-		cryPlayer.Play();
+		eventEmitter.Play();
+		eventEmitter.EventInstance.setParameterByName("PokemonName", PokemonNameToParamID());
 
 		var sequence = DOTween.Sequence();
 		sequence.Append(image.transform.DOLocalMoveY(originalPos.y - 150f, 0.5f));

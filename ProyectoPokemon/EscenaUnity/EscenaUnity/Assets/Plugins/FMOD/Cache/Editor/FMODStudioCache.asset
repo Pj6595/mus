@@ -1,5 +1,33 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3708945373825030695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PokemonCry
+  m_EditorClassIdentifier: 
+  Path: event:/PokemonCry
+  Guid:
+    Data1: -793806747
+    Data2: 1134380478
+    Data3: 1113773736
+    Data4: -1189533794
+  Banks:
+  - {fileID: 2994603513863288217}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 8622390562349559138}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,13 +43,14 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: 8417027168474350821}
   - {fileID: 2994603513863288217}
-  EditorEvents: []
+  EditorEvents:
+  - {fileID: -3708945373825030695}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2994603513863288217}
   StringsBanks:
   - {fileID: 8417027168474350821}
-  cacheTime: 637872666682766677
+  cacheTime: 637872681997841345
   cacheVersion: 10
 --- !u!114 &2994603513863288217
 MonoBehaviour:
@@ -38,10 +67,10 @@ MonoBehaviour:
   Path: ../../ProyectoFMOD/PokeMus/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637872666682726699
+  lastModified: 637872681997811363
   FileSizes:
   - Name: Desktop
-    Value: 1012
+    Value: 143328
   Exists: 1
 --- !u!114 &8417027168474350821
 MonoBehaviour:
@@ -58,8 +87,32 @@ MonoBehaviour:
   Path: ../../ProyectoFMOD/PokeMus/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637872666682766677
+  lastModified: 637872681997841345
   FileSizes:
   - Name: Desktop
-    Value: 700
+    Value: 800
+  Exists: 1
+--- !u!114 &8622390562349559138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PokemonCry/PokemonName
+  m_EditorClassIdentifier: 
+  Name: PokemonName
+  StudioPath: 
+  Min: 0
+  Max: 11
+  Default: 0
+  ID:
+    data1: 1483196452
+    data2: 893772256
+  Type: 1
+  IsGlobal: 0
+  Labels: []
   Exists: 1
