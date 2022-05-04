@@ -1,5 +1,29 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6055072889547663262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PokemonMusic/OnMenu
+  m_EditorClassIdentifier: 
+  Name: OnMenu
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2776496186
+    data2: 2297793221
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-3708945373825030695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,12 +69,13 @@ MonoBehaviour:
   - {fileID: 2994603513863288217}
   EditorEvents:
   - {fileID: -3708945373825030695}
+  - {fileID: 6658545346611676152}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2994603513863288217}
   StringsBanks:
   - {fileID: 8417027168474350821}
-  cacheTime: 637872681997841345
+  cacheTime: 637872890448752609
   cacheVersion: 10
 --- !u!114 &2994603513863288217
 MonoBehaviour:
@@ -67,11 +92,39 @@ MonoBehaviour:
   Path: ../../ProyectoFMOD/PokeMus/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637872681997811363
+  lastModified: 637872890448682585
   FileSizes:
   - Name: Desktop
-    Value: 143328
+    Value: 3317888
   Exists: 1
+--- !u!114 &6658545346611676152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PokemonMusic
+  m_EditorClassIdentifier: 
+  Path: event:/PokemonMusic
+  Guid:
+    Data1: -1870397916
+    Data2: 1300906506
+    Data3: -2011786819
+    Data4: -1528882222
+  Banks:
+  - {fileID: 2994603513863288217}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -6055072889547663262}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 86465
 --- !u!114 &8417027168474350821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,10 +140,10 @@ MonoBehaviour:
   Path: ../../ProyectoFMOD/PokeMus/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637872681997841345
+  lastModified: 637872890448752609
   FileSizes:
   - Name: Desktop
-    Value: 800
+    Value: 898
   Exists: 1
 --- !u!114 &8622390562349559138
 MonoBehaviour:

@@ -43,7 +43,7 @@ public class BattleSystem : MonoBehaviour
 
 	PokemonIA enemyAI;
 
-	AudioSource forbiddenSound;
+	FMODUnity.StudioEventEmitter eventEmitter;
 
 	private void Start()
 	{
@@ -59,7 +59,7 @@ public class BattleSystem : MonoBehaviour
 
 		enemyAI = rival.TrainerAI;
 
-		forbiddenSound = gameObject.GetComponent<AudioSource>();
+		eventEmitter = gameObject.GetComponent<FMODUnity.StudioEventEmitter>();
 	}
 
 	public void StartBattle()
@@ -176,7 +176,7 @@ public class BattleSystem : MonoBehaviour
 			else if (currentAction == 1)
 			{
 				//Bag
-				forbiddenSound.Play();
+				//forbiddenSound.Play();
 			}
 
 			if (currentAction == 2)
@@ -198,6 +198,7 @@ public class BattleSystem : MonoBehaviour
 	{
 		state = BattleState.PartyScreen;
 		partyScreen.gameObject.SetActive(true);
+		eventEmitter.EventInstance.setParameterByName("OnMenu", 1);
 		partyScreen.SetPartyData(playerParty.Pokemons);
 	}
 
@@ -255,6 +256,7 @@ public class BattleSystem : MonoBehaviour
 			}
 
 			partyScreen.gameObject.SetActive(false);
+			eventEmitter.EventInstance.setParameterByName("OnMenu", 0);
 
 			if (previState == BattleState.ActionSelection)
 			{
@@ -276,6 +278,7 @@ public class BattleSystem : MonoBehaviour
 			}
 
 			partyScreen.gameObject.SetActive(false);
+			eventEmitter.EventInstance.setParameterByName("OnMenu", 0);
 
 			if (previState == BattleState.AboutToUse)
 			{
