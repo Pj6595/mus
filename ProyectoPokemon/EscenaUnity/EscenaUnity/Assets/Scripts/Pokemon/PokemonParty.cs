@@ -31,6 +31,16 @@ public class PokemonParty : MonoBehaviour
 		return pokemon.Where(x => x.HP > 0).FirstOrDefault();
 	}
 
+	public int GetNumHealthyPokemon()
+    {
+		int num = 0;
+		foreach(var p in pokemon)
+        {
+			if (p.HP > 0) num++;
+        }
+		return num;
+    }
+
 	[SerializeField] private int nFullHeals;
 
 	public float NFullHeals

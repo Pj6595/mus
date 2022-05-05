@@ -268,6 +268,10 @@ public class BattleSystem : MonoBehaviour
 				state = BattleState.Busy;
 				StartCoroutine(SwitchPokemon(selectedMember, playerUnit));
 			}
+			if (playerParty.GetNumHealthyPokemon() <= 2 && rivalParty.GetNumHealthyPokemon() > 2)
+			{
+				eventEmitter.EventInstance.setParameterByName("GameCondition", 2); //Pierdes
+			}
 		}
 		else if (Input.GetKeyDown(KeyCode.X))
 		{
@@ -645,7 +649,11 @@ public class BattleSystem : MonoBehaviour
 		var nextPokemon = aboutToUsePokemon;
 		enemyUnit.Setup(nextPokemon);
 		yield return dialogBox.TypeDialog($"{rival.TrainerName} saca a {nextPokemon.Base.Name}");
-
 		state = BattleState.RunningTurn;
+
+		if (rivalParty.GetNumHealthyPokemon() <= 2)
+		{
+			eventEmitter.EventInstance.setParameterByName("GameCondition", 1); //Ganas
+		}
 	}
 }
