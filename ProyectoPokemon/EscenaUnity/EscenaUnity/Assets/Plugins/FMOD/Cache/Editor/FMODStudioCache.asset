@@ -75,7 +75,7 @@ MonoBehaviour:
   - {fileID: 2994603513863288217}
   StringsBanks:
   - {fileID: 8417027168474350821}
-  cacheTime: 637872912050660002
+  cacheTime: 637873546950929794
   cacheVersion: 10
 --- !u!114 &2994603513863288217
 MonoBehaviour:
@@ -92,10 +92,10 @@ MonoBehaviour:
   Path: ../../ProyectoFMOD/PokeMus/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637872912050629980
+  lastModified: 637873546950889810
   FileSizes:
   - Name: Desktop
-    Value: 3318912
+    Value: 11189440
   Exists: 1
 --- !u!114 &6658545346611676152
 MonoBehaviour:
@@ -122,9 +122,34 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters:
   - {fileID: -6055072889547663262}
+  - {fileID: 8244514845818247373}
   MinDistance: 0
   MaxDistance: 0
-  Length: 86465
+  Length: 88581
+--- !u!114 &8244514845818247373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PokemonMusic/GameCondition
+  m_EditorClassIdentifier: 
+  Name: GameCondition
+  StudioPath: 
+  Min: 0
+  Max: 2
+  Default: 0
+  ID:
+    data1: 1300712337
+    data2: 3687215373
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &8417027168474350821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,10 +165,10 @@ MonoBehaviour:
   Path: ../../ProyectoFMOD/PokeMus/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637872912050660002
+  lastModified: 637873546950929794
   FileSizes:
   - Name: Desktop
-    Value: 898
+    Value: 942
   Exists: 1
 --- !u!114 &8622390562349559138
 MonoBehaviour:

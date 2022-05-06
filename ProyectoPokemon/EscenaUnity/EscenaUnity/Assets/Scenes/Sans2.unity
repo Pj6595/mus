@@ -3165,15 +3165,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemon:
   - _base: {fileID: 11400000, guid: a027ef51a14c3744ba2105b7cc2e03f0, type: 2}
-    level: 100
+    level: 1
   - _base: {fileID: 11400000, guid: 1a56dac1682cf8444b220d06f889fceb, type: 2}
-    level: 100
+    level: 1
   - _base: {fileID: 11400000, guid: fadb5e2d44059334b938d6534633c91c, type: 2}
-    level: 100
+    level: 1
   - _base: {fileID: 11400000, guid: 54825a66a390e1042a684a003bfe3198, type: 2}
-    level: 100
+    level: 1
   - _base: {fileID: 11400000, guid: 76cd81d8dfbbccb4fafdfcfabc3c1e71, type: 2}
-    level: 100
+    level: 1
   - _base: {fileID: 11400000, guid: 5172333c991ed50419cf2e78ced1988e, type: 2}
     level: 100
   nFullHeals: 3
