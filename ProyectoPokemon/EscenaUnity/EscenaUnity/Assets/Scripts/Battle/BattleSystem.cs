@@ -338,6 +338,9 @@ public class BattleSystem : MonoBehaviour
 		{
 			dialogBox.EnableActionSelector(false);
 			dialogBox.SetMoveNames(newPokemon.Moves);
+
+			if(playerUnit.Pokemon.HP <= playerUnit.Pokemon.MaxHP * 0.2) eventEmitter.EventInstance.setParameterByName("LowHealth", 1);
+			else eventEmitter.EventInstance.setParameterByName("LowHealth", 0);
 		}
 		yield return dialogBox.TypeDialog($"¡Vamos, {newPokemon.Base.Name}!");
 
@@ -482,6 +485,12 @@ public class BattleSystem : MonoBehaviour
 					if (rnd <= secondary.Chance)
 						yield return RunMoveEffects(secondary, sourceUnit.Pokemon, targetUnit.Pokemon, secondary.Target);
 				}
+			}
+
+			if(targetUnit == playerUnit)
+            {
+				if(playerUnit.Pokemon.HP <= targetUnit.Pokemon.MaxHP * 0.5) eventEmitter.EventInstance.setParameterByName("LowHealth", 1);
+				else eventEmitter.EventInstance.setParameterByName("LowHealth", 0);
 			}
 
 			if (targetUnit.Pokemon.HP <= 0)

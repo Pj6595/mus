@@ -47,7 +47,7 @@ MonoBehaviour:
   - {fileID: 2994603513863288217}
   StringsBanks:
   - {fileID: 8417027168474350821}
-  cacheTime: 637874343758021340
+  cacheTime: 637875426377763963
   cacheVersion: 10
 --- !u!114 &2925761164960491276
 MonoBehaviour:
@@ -92,10 +92,34 @@ MonoBehaviour:
   Path: ../../ProyectoFMOD/PokeMus/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637874343757961324
+  lastModified: 637875426377723908
   FileSizes:
   - Name: Desktop
-    Value: 11009248
+    Value: 11068800
+  Exists: 1
+--- !u!114 &3971578748584995647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PokemonMusic/LowHealth
+  m_EditorClassIdentifier: 
+  Name: LowHealth
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 915553200
+    data2: 3238631979
+  Type: 1
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &6221344538163283207
 MonoBehaviour:
@@ -160,10 +184,10 @@ MonoBehaviour:
   Path: ../../ProyectoFMOD/PokeMus/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637874343758021340
+  lastModified: 637875426377763963
   FileSizes:
   - Name: Desktop
-    Value: 942
+    Value: 982
   Exists: 1
 --- !u!114 &8469667275163233464
 MonoBehaviour:
@@ -191,6 +215,7 @@ MonoBehaviour:
   Parameters:
   - {fileID: 6221344538163283207}
   - {fileID: -6210026313141827661}
+  - {fileID: 3971578748584995647}
   MinDistance: 0
   MaxDistance: 0
-  Length: 88581
+  Length: 274581

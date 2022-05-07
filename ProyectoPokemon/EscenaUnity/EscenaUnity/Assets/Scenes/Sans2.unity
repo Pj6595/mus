@@ -1410,9 +1410,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemon:
   - _base: {fileID: 11400000, guid: 1315643997c17bb449398d34f8e7887a, type: 2}
-    level: 1
+    level: 95
   - _base: {fileID: 11400000, guid: 56b74626abc40e246874b60d4c41928b, type: 2}
-    level: 1
+    level: 95
   - _base: {fileID: 11400000, guid: d536d701f36995c4ba304d8c633cb53a, type: 2}
     level: 95
   nFullHeals: 0
