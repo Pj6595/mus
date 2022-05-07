@@ -1410,15 +1410,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemon:
   - _base: {fileID: 11400000, guid: 1315643997c17bb449398d34f8e7887a, type: 2}
-    level: 95
-  - _base: {fileID: 11400000, guid: d47ca2da8f8d8c1409cb9f7a07d4ea3b, type: 2}
-    level: 95
-  - _base: {fileID: 11400000, guid: 0f33b92a699a9374d9c62f900bbce7e8, type: 2}
-    level: 95
-  - _base: {fileID: 11400000, guid: 43622eea49dc3994d93541babaff97c4, type: 2}
-    level: 95
+    level: 1
   - _base: {fileID: 11400000, guid: 56b74626abc40e246874b60d4c41928b, type: 2}
-    level: 95
+    level: 1
   - _base: {fileID: 11400000, guid: d536d701f36995c4ba304d8c633cb53a, type: 2}
     level: 95
   nFullHeals: 0
@@ -3165,15 +3159,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pokemon:
   - _base: {fileID: 11400000, guid: a027ef51a14c3744ba2105b7cc2e03f0, type: 2}
-    level: 1
+    level: 100
   - _base: {fileID: 11400000, guid: 1a56dac1682cf8444b220d06f889fceb, type: 2}
-    level: 1
+    level: 100
   - _base: {fileID: 11400000, guid: fadb5e2d44059334b938d6534633c91c, type: 2}
-    level: 1
+    level: 100
   - _base: {fileID: 11400000, guid: 54825a66a390e1042a684a003bfe3198, type: 2}
-    level: 1
+    level: 100
   - _base: {fileID: 11400000, guid: 76cd81d8dfbbccb4fafdfcfabc3c1e71, type: 2}
-    level: 1
+    level: 100
   - _base: {fileID: 11400000, guid: 5172333c991ed50419cf2e78ced1988e, type: 2}
     level: 100
   nFullHeals: 3
